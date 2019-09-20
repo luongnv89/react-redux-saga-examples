@@ -1,7 +1,16 @@
 const IMAGES = {
-    LOAD: 'IMG_LOAD',
-    LOAD_OK: 'IMG_LOAD_OK',
-    LOAD_FAILED: 'IMG_LOAD_FAILED',
+  LOAD: 'IMG_LOAD',
+  LOAD_OK: 'IMG_LOAD_OK',
+  LOAD_FAILED: 'IMG_LOAD_FAILED',
 };
 
-export { IMAGES };
+const STATS = {
+  LOAD: 'STATS_LOAD',
+  LOAD_OK: 'STATS_LOAD_OK',
+  LOAD_FAILED: 'STATS_LOAD_FAILED',
+};
+
+export {
+  IMAGES,
+  STATS
+};

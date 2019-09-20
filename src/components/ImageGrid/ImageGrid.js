@@ -5,6 +5,7 @@ import { loadImages } from '../../actions';
 import Button from '../Button/Button';
 
 import './styles.css';
+import Stats from '../Stats/Stats';
 
 class ImageGrid extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class ImageGrid extends Component {
   }
 
   render() {
-    const { images, error, isLoading } = this.props;
+    const { images, error, isLoading, imagesStats } = this.props;
     return (
       <div className="content">
         <section className="grid">
@@ -21,6 +22,7 @@ class ImageGrid extends Component {
               key={image.id}
               className={`item item-${Math.ceil(image.height / image.width)}`}
             >
+              <Stats stats={imagesStats[image.id]} />
               <img src={image.urls.small} alt={image.user.username} />
             </div>
           ))}
@@ -36,10 +38,11 @@ class ImageGrid extends Component {
   }
 }
 
-const mapPropsToStates = ({ isLoading, images, error }) => ({
+const mapPropsToStates = ({ isLoading, images, error, imagesStats }) => ({
   isLoading,
   images,
   error,
+  imagesStats,
 });
 
 const mapDispatchToProps = dispatch => ({

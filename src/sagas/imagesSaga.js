@@ -1,9 +1,21 @@
 // watcher saga -> actions -> worker saga
-import { call, take, put, takeEvery, select } from 'redux-saga/effects';
+import {
+  call,
+  put,
+  takeEvery,
+  select
+} from 'redux-saga/effects';
 
-import { IMAGES } from '../constants';
-import { fetchImages } from '../api';
-import { setImages, setError } from '../actions';
+import {
+  IMAGES
+} from '../constants';
+import {
+  fetchImages
+} from '../api';
+import {
+  setImages,
+  setError
+} from '../actions';
 const getPage = state => state.nextPage;
 
 function* handleImagesLoad() {
